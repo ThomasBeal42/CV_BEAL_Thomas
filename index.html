@@ -6,14 +6,35 @@
   <meta name="description" content="CV de Thomas Beal, Administrateur systèmes et réseaux, passionné par l'informatique.">
   <title>CV Beal Thomas</title>
 
-  <!-- Preload the font for faster loading -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" as="style">
-  <link href="CV.css" rel="stylesheet">
+  <!-- Preload font to improve performance -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" as="style" crossorigin="anonymous">
   
-  <!-- Load the Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Load critical CSS inline -->
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f4f7;
+      color: #333;
+    }
 
-  <!-- Load the script for interactivity -->
+    .cv-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+  <!-- Non-critical CSS (external) -->
+  <link rel="stylesheet" href="CV.css" media="print" onload="this.media='all'">
+
+  <!-- Defer JavaScript to avoid render-blocking -->
   <script defer src="CV.js"></script>
 </head>
 <body>
@@ -27,10 +48,9 @@
   <!-- CV content -->
   <div class="cv-container">
     <div class="left-column">
-      <!-- Portrait image -->
+      <!-- Portrait image with lazy loading -->
       <img class="portrait" src="img/homme.avif" alt="Portrait de Thomas Beal" loading="lazy" style="width: 100%; height: auto;" />
       
-      <!-- Information sections -->
       <div class="section">
         <h3>Thomas Beal</h3>
       </div>
@@ -66,7 +86,6 @@
         <h1>Thomas <span class="text-blue text-uppercase">Beal</span></h1>
         <p>Administrateur systèmes et réseaux</p>
 
-        <!-- Contact information -->
         <ul class="infos">
           <li><i class="icon fas fa-at"></i> <a href="mailto:blabla@gmail.com">blabla@gmail.com</a></li>
           <li><i class="icon fas fa-phone"></i> 04 75 53 80 50</li>
