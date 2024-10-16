@@ -4,6 +4,7 @@ body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: url('img_windows10_background.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
     transition: background-color 0.3s ease, color 0.3s ease;
