@@ -6,29 +6,31 @@
   <meta name="description" content="CV de Thomas Beal, Administrateur systèmes et réseaux, passionné par l'informatique.">
   <title>CV Beal Thomas</title>
 
-  
+  <!-- Preload the font for faster loading -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" as="style">
   <link href="CV.css" rel="stylesheet">
-
- 
+  
+  <!-- Load the Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-
+  <!-- Load the script for interactivity -->
   <script defer src="CV.js"></script>
 </head>
 <body>
 
+  <!-- Dark mode toggle button -->
+  <button id="darkModeToggle" aria-label="Activer/Désactiver le mode sombre" title="Activer/Désactiver le mode sombre">Mode Sombre</button>
 
-  <button id="darkModeToggle" aria-label="Activer/Désactiver le mode sombre">Mode Sombre</button>
+  <!-- GitHub button -->
+  <button id="githubButton" aria-label="Aller sur GitHub" title="Aller sur GitHub">GitHub</button>
 
- 
-  <button id="githubButton" aria-label="Aller sur GitHub">GitHub</button>
-
+  <!-- CV content -->
   <div class="cv-container">
     <div class="left-column">
-      
+      <!-- Portrait image -->
       <img class="portrait" src="img/homme.avif" alt="Portrait de Thomas Beal" loading="lazy" style="width: 100%; height: auto;" />
       
+      <!-- Information sections -->
       <div class="section">
         <h3>Thomas Beal</h3>
       </div>
@@ -64,7 +66,7 @@
         <h1>Thomas <span class="text-blue text-uppercase">Beal</span></h1>
         <p>Administrateur systèmes et réseaux</p>
 
-       
+        <!-- Contact information -->
         <ul class="infos">
           <li><i class="icon fas fa-at"></i> <a href="mailto:blabla@gmail.com">blabla@gmail.com</a></li>
           <li><i class="icon fas fa-phone"></i> 04 75 53 80 50</li>
@@ -96,7 +98,8 @@
     </div>
   </div>
 
-  
-  <button id="scrollUp" onclick="scrollToTop()" aria-label="Revenir en haut">↑ Haut</button>
+  <!-- Scroll to top button -->
+  <button id="scrollUp" onclick="scrollToTop()" aria-label="Revenir en haut" title="Revenir en haut">↑ Haut</button>
+
 </body>
 </html>
