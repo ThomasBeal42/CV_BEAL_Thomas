@@ -3,38 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon CV</title>
+    <meta name="description" content="CV de [Votre Nom] - Expériences professionnelles et formations">
+    <title>CV de [Votre Nom]</title>
     <link rel="preload" href="CV.css" as="style">
     <link rel="stylesheet" href="CV.css">
 </head>
 <body>
-    <div class="cv-container">
-        <!-- Contenu du CV -->
+    <header>
+        <h1>CV de [Votre Nom]</h1>
+    </header>
+    <main class="cv-container">
         <div class="left-column">
-            <!-- Contenu de la colonne de gauche -->
+            <img src="votre-photo.jpg" alt="Photo de [Votre Nom]" class="portrait" width="160" height="160">
+            <!-- Ajoutez ici le contenu de la colonne de gauche -->
         </div>
         <div class="right-column">
-            <section class="section">
-                <h2>Expériences professionnelles</h2>
-                <p><strong>2022</strong></p>
-                <p>Stage de première dans une Entreprise de Travaux Agricole</p>
-                <p><strong>2020</strong></p>
-                <p>Stage de 3ème chez un électricien</p>
+            <section aria-labelledby="experiences">
+                <h2 id="experiences">Expériences professionnelles</h2>
+                <article>
+                    <h3>2022</h3>
+                    <p>Stage de première dans une Entreprise de Travaux Agricole</p>
+                </article>
+                <article>
+                    <h3>2020</h3>
+                    <p>Stage de 3ème chez un électricien</p>
+                </article>
             </section>
-            <section class="section">
-                <h2>Études & formations</h2>
-                <p><strong>2021 - 2024</strong> BAC Général avec option Maths et NSI</p>
-                <p><strong>2015</strong> Brevet des collèges</p>
+            <section aria-labelledby="formations">
+                <h2 id="formations">Études & formations</h2>
+                <ul>
+                    <li><strong>2021 - 2024</strong> BAC Général avec option Maths et NSI</li>
+                    <li><strong>2015</strong> Brevet des collèges</li>
+                </ul>
             </section>
-            <section class="section">
-                <h2>Autres expériences</h2>
+            <section aria-labelledby="autres">
+                <h2 id="autres">Autres expériences</h2>
                 <p>Permis B, véhiculé</p>
             </section>
         </div>
-    </div>
-    <button id="scrollUp" aria-label="Retour en haut">↑</button>
-    <button id="darkModeToggle">Mode sombre</button>
-    <button id="githubButton">GitHub</button>
+    </main>
+    <button id="scrollUp" aria-label="Retour en haut de la page">↑</button>
+    <button id="darkModeToggle" aria-label="Activer/désactiver le mode sombre">Mode sombre</button>
+    <button id="githubButton" aria-label="Visiter mon profil GitHub">GitHub</button>
     <script src="CV.js" defer></script>
 </body>
 </html>
