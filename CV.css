@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('img_windows10_background.jpg') no-repeat center center fixed;
+  background-size: cover; 
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+a {
+  text-decoration: none;
+  color: #0056b3;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #003d7a;
+}
+
+p {
+  margin: 0 0 1.5rem; 
+  line-height: 1.8; 
+  font-size: 1rem;
+  transition: color 0.3s ease; 
+}
+
+h1, h2 {
+  margin: 0 0 1rem;
+  color: #002060;
+  font-weight: 700;
+  transition: color 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+}
+
+h1 {
+  font-size: 2.7rem; 
+}
+
+h2 {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1.9rem; 
+  color: #0056b3;
+  border-bottom: 2px solid #0056b3; 
+  padding-bottom: 5px;
+}
+
+.cv-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cv-container:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.left-column, .right-column {
+  padding: 20px;
+}
+
+.left-column {
+  flex: 1;
+  max-width: 320px; 
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  margin-right: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05); 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.right-column {
+  flex: 2;
+  max-width: calc(100% - 360px); 
+}
+
+.portrait {
+  border-radius: 50%;
+  max-width: 160px; 
+  margin: auto;
+  display: block;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease;
+}
+
+.portrait:hover {
+  transform: scale(1.05); 
+}
+
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.skills, .infos {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 1.5rem; 
+}
+
+.skills li, .infos li {
+  margin-bottom: 10px; 
+  color: #333;
+  display: flex;
+  align-items: center; 
+}
+
+.icon {
+  margin-right: 10px;
+  color: #0056b3;
+  font-size: 1.2rem; 
+}
+
+.header {
+  padding-bottom: 25px; 
+  border-bottom: 2px solid #ececec;
+}
+
+#scrollUp, #darkModeToggle {
+  position: fixed;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollUp {
+  bottom: 20px;
+  right: 20px;
+  padding: 18px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem; 
+}
+
+#darkModeToggle {
+  top: 20px;
+  right: 20px;
+  border-radius: 25px;
+  padding: 12px 22px;
+  display: block;
+  font-size: 16px;
+}
+
+#scrollUp:hover, #darkModeToggle:hover {
+  background-color: #003d7a;
+  transform: scale(1.1);
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode a {
+  color: #bb86fc;
+}
+
+body.dark-mode .cv-container {
+  background-color: #1e1e1e;
+  box-shadow: none;
+}
+
+body.dark-mode .left-column {
+  background-color: #272727;
+}
+
+body.dark-mode h1, body.dark-mode h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .icon, body.dark-mode #darkModeToggle, body.dark-mode #scrollUp {
+  background-color: #bb86fc;
+  color: #121212;
+}
+
+body.dark-mode #scrollUp:hover, body.dark-mode #darkModeToggle:hover {
+  background-color: #3700b3;
+}
+
+@media only screen and (max-width: 768px) {
+  .cv-container {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .left-column, .right-column {
+    max-width: 100%;
+    flex: none; 
+    margin-right: 0;
+  }
+
+  .left-column {
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 2.3rem; 
+  }
+
+  h2 {
+    font-size: 1.6rem; 
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  #darkModeToggle {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+
+  #scrollUp {
+    padding: 14px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 2rem; 
+  }
+
+  h2 {
+    font-size: 1.4rem; 
+  }
+
+  p {
+    font-size: 0.85rem; 
+  }
+
+  .portrait {
+    max-width: 120px; 
+    margin-bottom: 25px;
+  }
+
+  #darkModeToggle {
+    top: 15px;
+    right: 15px;
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  #scrollUp {
+    bottom: 15px;
+    right: 15px;
+    padding: 12px;
+  }
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .infos li {
+  color: #ffffff;
+}
+
+body.dark-mode a {
+  color: #bb86fc;
+}
+
+body.dark-mode .cv-container {
+  background-color: #1e1e1e;
+  box-shadow: none;
+}
+
+body.dark-mode .left-column {
+  background-color: #272727;
+}
+
+body.dark-mode h1, body.dark-mode h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .icon, body.dark-mode #darkModeToggle, body.dark-mode #scrollUp {
+  background-color: #bb86fc;
+  color: #121212;
+}
+
+body.dark-mode #scrollUp:hover, body.dark-mode #darkModeToggle:hover {
+  background-color: #3700b3;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .infos li {
+  color: #ffffff;
+}
+
+body.dark-mode .skills li {
+  color: #ffffff; 
+}
+
+body.dark-mode a {
+  color: #bb86fc; 
+}
+
+body.dark-mode .cv-container {
+  background-color: #1e1e1e;
+  box-shadow: none;
+}
+
+body.dark-mode .left-column {
+  background-color: #272727;
+}
+
+body.dark-mode h1, body.dark-mode h2 {
+  color: #ffffff; 
+}
+
+body.dark-mode .icon, body.dark-mode #darkModeToggle, body.dark-mode #scrollUp {
+  background-color: #bb86fc;
+  color: #121212;
+}
+
+body.dark-mode #scrollUp:hover, body.dark-mode #darkModeToggle:hover {
+  background-color: #3700b3;
+}
+
+#githubButton {
+  position: fixed;
+  top: 70px; 
+  right: 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 22px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#githubButton:hover {
+  background-color: #555;
+  transform: scale(1.1);
+}
+
