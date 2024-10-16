@@ -1,44 +1,35 @@
-window.onscroll = function() {
-  const scrollUpButton = document.getElementById("scrollUp");
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    scrollUpButton.style.display = "flex";
-  } else {
-    scrollUpButton.style.display = "none";
-  }
+const scrollUpButton = document.getElementById("scrollUp");
+const toggleDarkMode = document.getElementById('darkModeToggle');
+const githubButton = document.getElementById('githubButton');
+
+const observer = new IntersectionObserver(
+    ([entry]) => {
+        scrollUpButton.style.display = entry.isIntersecting ? 'none' : 'flex';
+    },
+    { threshold: 0.1 }
+);
+observer.observe(document.body);
+
+const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-// Scroll to Top Function
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+scrollUpButton.addEventListener('click', scrollToTop);
 
-document.addEventListener("DOMContentLoaded", function() {
-  const toggleDarkMode = document.getElementById('darkModeToggle');
-  const githubButton = document.getElementById('githubButton');
+toggleDarkMode.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+});
 
-  // Dark Mode Toggle
-  if (toggleDarkMode) {
-    toggleDarkMode.addEventListener('click', function() {
-      document.body.classList.toggle('dark-mode');
-      
-      // Save user's preference in local storage
-      if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
-    });
+document.body.classList.toggle('dark-mode', localStorage.getItem('theme') === 'dark');
 
-    // Apply the saved theme on page load
+githubButton.addEventListener('click', () => {
+    window.open('https://github.com', '_blank', 'noopener,noreferrer');
+});
+
+document.addEventListener("DOMContentLoaded", () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
-      document.body.classList.add('dark-mode');
+        document.body.classList.add('dark-mode');
     }
-  }
-
-  githubButton.addEventListener('click', function() {
-    window.open('https://github.com', '_blank', 'noopener noreferrer');
-  });
-  
-  }
-);
+});
