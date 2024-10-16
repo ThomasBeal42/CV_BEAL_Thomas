@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="CV de Thomas Beal, Administrateur systèmes et réseaux, passionné par l'informatique.">
-  <title>CV Beal Thomas BTSSIO1</title>
+  <title>CV Beal Thomas</title>
 
-  <!-- Preload font to improve performance -->
+  <!-- Preload critical font and styles -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" as="style" crossorigin="anonymous">
-  
-  <!-- Load critical CSS inline -->
+  <link rel="stylesheet" href="CV.css" media="print" onload="this.media='all'">
+
+  <!-- Inline critical CSS to avoid render-blocking -->
   <style>
     body {
       font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f3f4f7;
+      background-color: #f3f4f7;
       color: #333;
     }
-
     .cv-container {
       display: flex;
       flex-wrap: wrap;
@@ -29,12 +29,14 @@
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
   </style>
 
-  <!-- Non-critical CSS (external) -->
-  <link rel="stylesheet" href="CV.css" media="print" onload="this.media='all'">
-
-  <!-- Defer JavaScript to avoid render-blocking -->
+  <!-- Defer JS scripts to avoid render-blocking -->
   <script defer src="CV.js"></script>
 </head>
 <body>
@@ -48,9 +50,9 @@
   <!-- CV content -->
   <div class="cv-container">
     <div class="left-column">
-      <!-- Portrait image with lazy loading -->
-      <img class="portrait" src="img/homme.avif" alt="Portrait de Thomas Beal" loading="lazy" style="width: 100%; height: auto;" />
-      
+      <!-- Optimized image with lazy loading -->
+      <img class="portrait" src="img/homme.webp" alt="Portrait de Thomas Beal" loading="lazy" />
+
       <div class="section">
         <h3>Thomas Beal</h3>
       </div>
