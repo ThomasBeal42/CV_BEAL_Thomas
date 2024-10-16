@@ -2,6 +2,7 @@ const scrollUpButton = document.getElementById("scrollUp");
 const toggleDarkMode = document.getElementById('darkModeToggle');
 const githubButton = document.getElementById('githubButton');
 
+// Scroll to top visibility control
 window.onscroll = function() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         scrollUpButton.style.display = "flex";
@@ -10,10 +11,12 @@ window.onscroll = function() {
     }
 };
 
+// Smooth scroll to top
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Dark mode toggle and GitHub button functionality
 document.addEventListener("DOMContentLoaded", function() {
     toggleDarkMode.addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
@@ -21,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme)) {
         document.body.classList.add('dark-mode');
     }
 
@@ -32,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 scrollUpButton.addEventListener('click', scrollToTop);
 
-// Gestion des raccourcis clavier
+// Keyboard shortcuts for dark mode, GitHub, and scroll to top
 document.addEventListener('keydown', (e) => {
     if (e.altKey) {
         switch(e.key) {
