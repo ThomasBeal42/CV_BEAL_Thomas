@@ -1,20 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-:root {
-    --primary-color: #0056b3;
-    --text-color: #333;
-    --bg-color: #ffffff;
-    --dark-bg-color: #121212;
-    --dark-text-color: #e0e0e0;
-}
-
 body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
+    background: url('img_windows10_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -24,9 +16,9 @@ body {
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
-    background-color: var(--bg-color);
+    background-color: #ffffff;
     border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .left-column, .right-column {
@@ -38,6 +30,8 @@ body {
     max-width: 320px;
     background-color: #f7f7f7;
     border-radius: 12px;
+    margin-right: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,.05);
 }
 
 .right-column {
@@ -45,68 +39,69 @@ body {
     max-width: calc(100% - 360px);
 }
 
-h1, h2, h3 {
-    color: var(--primary-color);
+h1, h2 {
+    color: #002060;
     margin: 0 0 1rem;
+    font-weight: 700;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.3rem; }
-
-p, ul { margin: 0 0 1.5rem; }
-
-.portrait {
-    border-radius: 50%;
-    max-width: 160px;
-    height: auto;
-    display: block;
-    margin: 0 auto 30px;
+h1 { font-size: 2.7rem; }
+h2 {
+    font-size: 1.9rem;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 5px;
 }
 
-button {
-    background-color: var(--primary-color);
+p { margin: 0 0 1.5rem; line-height: 1.8; }
+
+#scrollUp, #darkModeToggle, #githubButton {
+    position: fixed;
+    background-color: #0056b3;
     color: white;
     border: none;
     border-radius: 25px;
     cursor: pointer;
     padding: 12px 22px;
     font-size: 16px;
+    box-shadow: 0 6px 15px rgba(0,0,0,.3);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover, button:focus {
-    background-color: #003d7a;
-    transform: scale(1.05);
-}
-
 #scrollUp {
-    position: fixed;
     bottom: 20px;
     right: 20px;
     border-radius: 50%;
-    padding: 15px;
+    padding: 18px;
+    display: none;
 }
 
-#darkModeToggle { position: fixed; top: 20px; right: 20px; }
-#githubButton { position: fixed; top: 70px; right: 20px; background-color: #333; }
+#darkModeToggle { top: 20px; right: 20px; }
+#githubButton { top: 70px; right: 20px; background-color: #333; }
 
-@media (prefers-reduced-motion: reduce) {
-    * {
-        transition: none !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .cv-container { flex-direction: column; }
-    .left-column, .right-column { max-width: 100%; }
+#scrollUp:hover, #darkModeToggle:hover, #githubButton:hover {
+    background-color: #003d7a;
+    transform: scale(1.1);
 }
 
 body.dark-mode {
-    background-color: var(--dark-bg-color);
-    color: var(--dark-text-color);
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
 body.dark-mode .cv-container { background-color: #1e1e1e; }
 body.dark-mode .left-column { background-color: #272727; }
-body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 { color: #bb86fc; }
+body.dark-mode h1, body.dark-mode h2 { color: #ffffff; }
+
+@media (max-width: 768px) {
+    .cv-container { flex-direction: column; }
+    .left-column, .right-column {
+        max-width: 100%;
+        margin-right: 0;
+    }
+    h1 { font-size: 2.3rem; }
+    h2 { font-size: 1.6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+}

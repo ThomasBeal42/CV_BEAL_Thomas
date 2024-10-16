@@ -2,59 +2,46 @@ const scrollUpButton = document.getElementById("scrollUp");
 const toggleDarkMode = document.getElementById('darkModeToggle');
 const githubButton = document.getElementById('githubButton');
 
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
+window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollUpButton.style.display = "flex";
+    } else {
+        scrollUpButton.style.display = "none";
+    }
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        scrollUpButton.style.display = entry.isIntersecting ? 'none' : 'block';
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    toggleDarkMode.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
-}, observerOptions);
 
-observer.observe(document.querySelector('header'));
-
-const scrollToTop = () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-};
-
-const toggleDarkModeFunc = () => {
-    document.body.classList.toggle('dark-mode');
-    const isDarkMode = document.body.classList.contains('dark-mode');
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-    toggleDarkMode.setAttribute('aria-pressed', isDarkMode);
-};
-
-const openGitHub = () => {
-    window.open('https://github.com', '_blank', 'noopener,noreferrer');
-};
-
-scrollUpButton.addEventListener('click', scrollToTop);
-toggleDarkMode.addEventListener('click', toggleDarkModeFunc);
-githubButton.addEventListener('click', openGitHub);
-
-document.addEventListener("DOMContentLoaded", () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
-        toggleDarkMode.setAttribute('aria-pressed', 'true');
     }
+
+    githubButton.addEventListener('click', function() {
+        window.open('https://github.com', '_blank', 'noopener,noreferrer');
+    });
 });
+
+scrollUpButton.addEventListener('click', scrollToTop);
 
 // Gestion des raccourcis clavier
 document.addEventListener('keydown', (e) => {
     if (e.altKey) {
         switch(e.key) {
             case 't':
-                toggleDarkModeFunc();
+                document.body.classList.toggle('dark-mode');
+                localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
                 break;
             case 'g':
-                openGitHub();
+                window.open('https://github.com', '_blank', 'noopener,noreferrer');
                 break;
             case 'h':
                 scrollToTop();
