@@ -8,6 +8,7 @@
 
   <!-- Preload fonts and critical resources for better performance -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" as="style" crossorigin="anonymous">
+  <link rel="preload" href="img/homme.webp" as="image">
 
   <!-- Load the external CSS file with media print to avoid render-blocking -->
   <link rel="stylesheet" href="CV.css" media="print" onload="this.media='all'">
@@ -27,6 +28,8 @@
   <!-- CV content -->
   <div class="cv-container">
     <div class="left-column">
+      <!-- Optimized image with lazy loading -->
+      <img class="portrait" src="img/homme.webp" alt="Portrait de Thomas Beal" loading="lazy" />
 
       <div class="section">
         <h3>Thomas Beal</h3>
