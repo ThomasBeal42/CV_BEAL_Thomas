@@ -73,7 +73,6 @@ button {
     padding: 12px 22px;
     font-size: 16px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #scrollUp {
@@ -93,11 +92,6 @@ button {
     top: 70px;
     right: 20px;
     background-color: #333;
-}
-
-button:hover {
-    background-color: #003d7a;
-    transform: scale(1.05);
 }
 
 body.dark-mode {

@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.add('dark-mode');
     }
 
-    // Désactivation du bouton GitHub sur les appareils mobiles
     if (window.innerWidth > 768) {
         githubButton.addEventListener('click', function() {
             window.open('https://github.com', '_blank', 'noopener,noreferrer');
@@ -38,10 +37,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// Activation du bouton de retour en haut
 scrollUpButton.addEventListener('click', scrollToTop);
 
-// Raccourcis clavier pour la navigation rapide
 document.addEventListener('keydown', (e) => {
     if (e.altKey) {
         switch(e.key) {
