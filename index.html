@@ -6,29 +6,34 @@
   <meta name="description" content="CV de Thomas Beal, Administrateur systèmes et réseaux, passionné par l'informatique.">
   <title>CV Beal Thomas</title>
 
-  <!-- Preload fonts and critical resources for better performance -->
+  <!-- Préchargement pour les polices et icônes -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" as="style" crossorigin="anonymous">
   <link rel="preload" href="img/homme.webp" as="image">
 
-  <!-- Load the external CSS file with media print to avoid render-blocking -->
+  <!-- Liens CSS et polices -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMU4Q4tr+XY36GviRbD1jFx3eRtCuZRxKsQ6Dtj" crossorigin="anonymous">
+
+  <!-- CSS optimisé pour un chargement asynchrone -->
   <link rel="stylesheet" href="CV.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="CV.css"></noscript>
 
-  <!-- Defer JS for non-blocking -->
+  <!-- Script JavaScript en différé -->
   <script defer src="CV.js"></script>
 </head>
 <body>
 
-  <!-- Dark mode toggle button -->
+  <!-- Bouton mode sombre -->
   <button id="darkModeToggle" aria-label="Activer/Désactiver le mode sombre" title="Activer/Désactiver le mode sombre">Mode Sombre</button>
 
-  <!-- GitHub button -->
+  <!-- Bouton GitHub -->
   <button id="githubButton" aria-label="Aller sur GitHub" title="Aller sur GitHub">GitHub</button>
 
-  <!-- CV content -->
+  <!-- Contenu principal du CV -->
   <div class="cv-container">
     <div class="left-column">
-      <!-- Optimized image with lazy loading -->
+      <!-- Image avec chargement différé -->
       <img class="portrait" src="img/homme.webp" alt="Portrait de Thomas Beal" loading="lazy" />
 
       <div class="section">
@@ -97,7 +102,7 @@
     </div>
   </div>
 
-  <!-- Scroll to top button -->
+  <!-- Bouton pour remonter en haut de la page -->
   <button id="scrollUp" onclick="scrollToTop()" aria-label="Revenir en haut" title="Revenir en haut">↑ Haut</button>
 
 </body>

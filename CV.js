@@ -2,7 +2,7 @@ const scrollUpButton = document.getElementById("scrollUp");
 const toggleDarkMode = document.getElementById('darkModeToggle');
 const githubButton = document.getElementById('githubButton');
 
-// Scroll to top visibility control
+// Contrôle de la visibilité du bouton pour remonter
 window.onscroll = function() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         scrollUpButton.style.display = "flex";
@@ -11,12 +11,12 @@ window.onscroll = function() {
     }
 };
 
-// Smooth scroll to top
+// Fonction de défilement vers le haut avec animation
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Dark mode toggle and GitHub button functionality
+// Fonctionnalités de mode sombre et bouton GitHub
 document.addEventListener("DOMContentLoaded", function() {
     toggleDarkMode.addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
@@ -30,14 +30,18 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.add('dark-mode');
     }
 
-    githubButton.addEventListener('click', function() {
-        window.open('https://github.com', '_blank', 'noopener,noreferrer');
-    });
+    // Désactivation du bouton GitHub sur les appareils mobiles
+    if (window.innerWidth > 768) {
+        githubButton.addEventListener('click', function() {
+            window.open('https://github.com', '_blank', 'noopener,noreferrer');
+        });
+    }
 });
 
+// Activation du bouton de retour en haut
 scrollUpButton.addEventListener('click', scrollToTop);
 
-// Keyboard shortcuts for dark mode, GitHub, and scroll to top
+// Raccourcis clavier pour la navigation rapide
 document.addEventListener('keydown', (e) => {
     if (e.altKey) {
         switch(e.key) {

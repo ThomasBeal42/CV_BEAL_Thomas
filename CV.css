@@ -95,9 +95,9 @@ button {
     background-color: #333;
 }
 
-#scrollUp:hover, #darkModeToggle:hover, #githubButton:hover {
+button:hover {
     background-color: #003d7a;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 body.dark-mode {
