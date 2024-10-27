@@ -2,7 +2,7 @@ const scrollUpButton = document.getElementById("scrollUp");
 const toggleDarkMode = document.getElementById('darkModeToggle');
 const githubButton = document.getElementById('githubButton');
 
-// Contrôle de la visibilité du bouton pour remonter
+// Contrôle de la visibilité du bouton de retour en haut
 window.onscroll = function() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         scrollUpButton.style.display = "flex";
@@ -11,7 +11,7 @@ window.onscroll = function() {
     }
 };
 
-// Fonction de défilement vers le haut avec animation
+// Fonction pour retourner en haut avec animation
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.add('dark-mode');
     }
 
-    // Désactivation du bouton GitHub sur les appareils mobiles
+    // Désactiver certaines fonctionnalités sur mobile
     if (window.innerWidth > 768) {
         githubButton.addEventListener('click', function() {
             window.open('https://github.com', '_blank', 'noopener,noreferrer');

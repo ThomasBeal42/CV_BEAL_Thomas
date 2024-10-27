@@ -9,17 +9,14 @@
   <!-- Préchargement pour les polices et icônes -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" as="style" crossorigin="anonymous">
-  <link rel="preload" href="img/homme.webp" as="image">
 
-  <!-- Liens CSS et polices -->
+  <!-- CSS pour chargement optimisé -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMU4Q4tr+XY36GviRbD1jFx3eRtCuZRxKsQ6Dtj" crossorigin="anonymous">
-
-  <!-- CSS optimisé pour un chargement asynchrone -->
   <link rel="stylesheet" href="CV.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="CV.css"></noscript>
 
-  <!-- Script JavaScript en différé -->
+  <!-- Script différé pour un chargement rapide -->
   <script defer src="CV.js"></script>
 </head>
 <body>
@@ -33,9 +30,6 @@
   <!-- Contenu principal du CV -->
   <div class="cv-container">
     <div class="left-column">
-      <!-- Image avec chargement différé -->
-      <img class="portrait" src="img/homme.webp" alt="Portrait de Thomas Beal" loading="lazy" />
-
       <div class="section">
         <h3>Thomas Beal</h3>
       </div>
